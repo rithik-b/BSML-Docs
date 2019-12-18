@@ -5934,3 +5934,12 @@ figure.highlight {
   .py-xl-10 {
     padding-top: 4rem !important;
     padding-bottom: 4rem !important; } }
+@media print {
+  .side-bar, .page-header {
+    display: none; }
+
+  .main-content {
+    max-width: auto;
+    margin: 1em; } }
+.label {
+  text-transform: none; }
