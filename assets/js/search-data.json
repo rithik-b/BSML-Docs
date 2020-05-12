@@ -50,7 +50,7 @@
   }
   ,"8": {
     "title": "UIObject",
-    "content": "About . The UIObject attribute can only be applied to fields. The type of the field must be GameObject. This tag is used in the same way as UIComponent but instead will give you the GameObject. . Example Usage . &lt;text id=&#39;whatever&#39;&gt;&lt;/text&gt; . [UIComponent(&quot;whatever&quot;)] private GameObject textObj; . This example will initialize textObj with the text tag’s GameObject component. .",
+    "content": "About . The UIObject attribute can only be applied to fields. The type of the field must be GameObject. This tag is used in the same way as UIComponent but instead will give you the GameObject. . Example Usage . &lt;text id=&#39;whatever&#39;&gt;&lt;/text&gt; . [UIObject(&quot;whatever&quot;)] private GameObject textObj; . This example will initialize textObj with the text tag’s GameObject component. .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Attributes/UIObject.html",
     "relUrl": "/Attributes/UIObject.html"
   }
@@ -68,7 +68,7 @@
   }
   ,"11": {
     "title": "Home",
-    "content": "Welcome to the BSML Docs! . If you’re new to BSML take a look at Getting Started . Patch Notes . Version 1.3.1 . change image’s color to image-color Version 1.3.0 . | added BSMLAutomaticViewController, an easier to use ViewController with hot reloading | added clickable-image component which behaves like clickable-text but for Images Misc . | gif optimizations | added color property to image tag | added default-color and highlight-color to clickable-text Bug Fixes . | fixed checkbox setting not working without a bound UIValue | fixed errors when using a null host while parsing Version 1.2.1 - 1.2.2 . | fixed bug where NotifyUpdaters would cause errors if disabled when destroyed Version 1.2.0 . | updated for Beat Saber 1.8.0 Version 1.1.5 . Color Components . | added color-setting for easily adding color options to your settings | added modal-color-picker which is similar to modal-keyboard in usage | . Image Improvements . animated GIF/APNG support | aside from resource path, you can now also use file path or a link to an image | added easy to use SetImage extension method for Image that includes the above 2 additions | . Misc . formatter now works on string-setting | . Bug Fixes . fixed slider-setting rounding issue | fixed UIValue float/double culture issues | .",
+    "content": "Welcome to the BSML Docs! . If you’re new to BSML take a look at Getting Started . Patch Notes . Version 1.3.2 . Fonts . Can now load system fonts as TMPro fonts | Loads some fallback fonts on startup for base game font Scrolly things . | Added generic scroll-view (no more using scrollable-settings-container everywhere!) | Added scrollable-container which is a barebones scrollable container intended to be used with a tagged scroll-indicator and or buttons Misc . | Added data parameter similar to the one for custom-list to list | Added characteristicSprites to CustomCellInfo | Made default resource path for BSMLAutomaticViewController first check if it exists with no extension in case DependentUpon is being used on that embedded resource Bug Fixes . | Fixed BSMLAutomaticViewController parsing every time it’s opened when not being hot reloaded | Fixed bug where gifs/apngs with a delay longer than 1 second wouldn’t look right | Fixed private properties not working as a UIValue Version 1.3.1 . | change image’s color to image-color Version 1.3.0 . | added BSMLAutomaticViewController, an easier to use ViewController with hot reloading | added clickable-image component which behaves like clickable-text but for Images Misc . | gif optimizations | added color property to image tag | added default-color and highlight-color to clickable-text Bug Fixes . | fixed checkbox setting not working without a bound UIValue | fixed errors when using a null host while parsing Version 1.2.1 - 1.2.2 . | fixed bug where NotifyUpdaters would cause errors if disabled when destroyed Version 1.2.0 . | updated for Beat Saber 1.8.0 Version 1.1.5 . Color Components . | added color-setting for easily adding color options to your settings | added modal-color-picker which is similar to modal-keyboard in usage | . Image Improvements . animated GIF/APNG support | aside from resource path, you can now also use file path or a link to an image | added easy to use SetImage extension method for Image that includes the above 2 additions | . Misc . formatter now works on string-setting | . Bug Fixes . fixed slider-setting rounding issue | fixed UIValue float/double culture issues | .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/",
     "relUrl": "/"
   }
@@ -283,276 +283,312 @@
     "relUrl": "/TypeHandlers/buttonartworkimage/"
   }
   ,"47": {
+    "title": "BSMLScrollIndicator",
+    "content": "{{page.type}} . {% for property in page.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} .",
+    "url": "https://monkeymanboy.github.io/BSML-Docs/TypeHandlers/bsmlscrollindicator/",
+    "relUrl": "/TypeHandlers/bsmlscrollindicator/"
+  }
+  ,"48": {
+    "title": "BSMLScrollableContainer",
+    "content": "{{page.type}} . {% for property in page.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} .",
+    "url": "https://monkeymanboy.github.io/BSML-Docs/TypeHandlers/bsmlscrollablecontainer/",
+    "relUrl": "/TypeHandlers/bsmlscrollablecontainer/"
+  }
+  ,"49": {
+    "title": "BSMLScrollView",
+    "content": "{{page.type}} . {% for property in page.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} .",
+    "url": "https://monkeymanboy.github.io/BSML-Docs/TypeHandlers/bsmlscrollview/",
+    "relUrl": "/TypeHandlers/bsmlscrollview/"
+  }
+  ,"50": {
     "title": "BackgroundTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/backgroundtag/",
     "relUrl": "/Tags/backgroundtag/"
   }
-  ,"48": {
+  ,"51": {
     "title": "BigButtonTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/bigbuttontag/",
     "relUrl": "/Tags/bigbuttontag/"
   }
-  ,"49": {
+  ,"52": {
     "title": "BottomButtonPanelTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/bottombuttonpaneltag/",
     "relUrl": "/Tags/bottombuttonpaneltag/"
   }
-  ,"50": {
+  ,"53": {
     "title": "ButtonTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/buttontag/",
     "relUrl": "/Tags/buttontag/"
   }
-  ,"51": {
+  ,"54": {
     "title": "ClickableImageTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/clickableimagetag/",
     "relUrl": "/Tags/clickableimagetag/"
   }
-  ,"52": {
+  ,"55": {
     "title": "ClickableTextTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/clickabletexttag/",
     "relUrl": "/Tags/clickabletexttag/"
   }
-  ,"53": {
+  ,"56": {
     "title": "CustomListTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/customlisttag/",
     "relUrl": "/Tags/customlisttag/"
   }
-  ,"54": {
+  ,"57": {
     "title": "GridLayoutTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/gridlayouttag/",
     "relUrl": "/Tags/gridlayouttag/"
   }
-  ,"55": {
+  ,"58": {
     "title": "HorizontalLayoutTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/horizontallayouttag/",
     "relUrl": "/Tags/horizontallayouttag/"
   }
-  ,"56": {
+  ,"59": {
     "title": "ButtonWithIconTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/buttonwithicontag/",
     "relUrl": "/Tags/buttonwithicontag/"
   }
-  ,"57": {
+  ,"60": {
     "title": "IconSegmentedControlTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/iconsegmentedcontroltag/",
     "relUrl": "/Tags/iconsegmentedcontroltag/"
   }
-  ,"58": {
+  ,"61": {
     "title": "ImageTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/imagetag/",
     "relUrl": "/Tags/imagetag/"
   }
-  ,"59": {
+  ,"62": {
     "title": "ModalColorPickerTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/modalcolorpickertag/",
     "relUrl": "/Tags/modalcolorpickertag/"
   }
-  ,"60": {
+  ,"63": {
     "title": "ModifierContainerTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/modifiercontainertag/",
     "relUrl": "/Tags/modifiercontainertag/"
   }
-  ,"61": {
+  ,"64": {
     "title": "ModifierTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/modifiertag/",
     "relUrl": "/Tags/modifiertag/"
   }
-  ,"62": {
+  ,"65": {
     "title": "RawImageTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/rawimagetag/",
     "relUrl": "/Tags/rawimagetag/"
   }
-  ,"63": {
+  ,"66": {
     "title": "LeaderboardTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/leaderboardtag/",
     "relUrl": "/Tags/leaderboardtag/"
   }
-  ,"64": {
+  ,"67": {
     "title": "ListTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/listtag/",
     "relUrl": "/Tags/listtag/"
   }
-  ,"65": {
+  ,"68": {
     "title": "LoadingIndicatorTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/loadingindicatortag/",
     "relUrl": "/Tags/loadingindicatortag/"
   }
-  ,"66": {
+  ,"69": {
     "title": "ModalKeyboardTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/modalkeyboardtag/",
     "relUrl": "/Tags/modalkeyboardtag/"
   }
-  ,"67": {
+  ,"70": {
     "title": "ModalTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/modaltag/",
     "relUrl": "/Tags/modaltag/"
   }
-  ,"68": {
+  ,"71": {
     "title": "PageButtonTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/pagebuttontag/",
     "relUrl": "/Tags/pagebuttontag/"
   }
-  ,"69": {
+  ,"72": {
+    "title": "ScrollableContainerTag",
+    "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
+    "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/scrollablecontainertag/",
+    "relUrl": "/Tags/scrollablecontainertag/"
+  }
+  ,"73": {
     "title": "ScrollableSettingsContainerTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/scrollablesettingscontainertag/",
     "relUrl": "/Tags/scrollablesettingscontainertag/"
   }
-  ,"70": {
+  ,"74": {
+    "title": "ScrollIndicatorTag",
+    "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
+    "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/scrollindicatortag/",
+    "relUrl": "/Tags/scrollindicatortag/"
+  }
+  ,"75": {
+    "title": "ScrollViewTag",
+    "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
+    "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/scrollviewtag/",
+    "relUrl": "/Tags/scrollviewtag/"
+  }
+  ,"76": {
     "title": "SettingsContainerTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/settingscontainertag/",
     "relUrl": "/Tags/settingscontainertag/"
   }
-  ,"71": {
+  ,"77": {
     "title": "StackLayoutTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/stacklayouttag/",
     "relUrl": "/Tags/stacklayouttag/"
   }
-  ,"72": {
+  ,"78": {
     "title": "TabSelectorTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/tabselectortag/",
     "relUrl": "/Tags/tabselectortag/"
   }
-  ,"73": {
+  ,"79": {
     "title": "TabTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/tabtag/",
     "relUrl": "/Tags/tabtag/"
   }
-  ,"74": {
+  ,"80": {
     "title": "TextPageScrollViewTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/textpagescrollviewtag/",
     "relUrl": "/Tags/textpagescrollviewtag/"
   }
-  ,"75": {
+  ,"81": {
     "title": "TextSegmentedControlTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/textsegmentedcontroltag/",
     "relUrl": "/Tags/textsegmentedcontroltag/"
   }
-  ,"76": {
+  ,"82": {
     "title": "TextTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/texttag/",
     "relUrl": "/Tags/texttag/"
   }
-  ,"77": {
+  ,"83": {
     "title": "VerticalLayoutTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/verticallayouttag/",
     "relUrl": "/Tags/verticallayouttag/"
   }
-  ,"78": {
+  ,"84": {
     "title": "BoolSettingTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/boolsettingtag/",
     "relUrl": "/Tags/boolsettingtag/"
   }
-  ,"79": {
+  ,"85": {
     "title": "CheckboxSettingTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/checkboxsettingtag/",
     "relUrl": "/Tags/checkboxsettingtag/"
   }
-  ,"80": {
+  ,"86": {
     "title": "ColorSettingTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/colorsettingtag/",
     "relUrl": "/Tags/colorsettingtag/"
   }
-  ,"81": {
+  ,"87": {
     "title": "DropdownListSettingTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/dropdownlistsettingtag/",
     "relUrl": "/Tags/dropdownlistsettingtag/"
   }
-  ,"82": {
+  ,"88": {
     "title": "IncrementSettingTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/incrementsettingtag/",
     "relUrl": "/Tags/incrementsettingtag/"
   }
-  ,"83": {
+  ,"89": {
     "title": "ListSettingTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/listsettingtag/",
     "relUrl": "/Tags/listsettingtag/"
   }
-  ,"84": {
+  ,"90": {
     "title": "ListSliderSettingTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/listslidersettingtag/",
     "relUrl": "/Tags/listslidersettingtag/"
   }
-  ,"85": {
+  ,"91": {
     "title": "SliderSettingTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/slidersettingtag/",
     "relUrl": "/Tags/slidersettingtag/"
   }
-  ,"86": {
+  ,"92": {
     "title": "StringSettingTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/stringsettingtag/",
     "relUrl": "/Tags/stringsettingtag/"
   }
-  ,"87": {
+  ,"93": {
     "title": "SubmenuTag",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {% include tag_top/{{page.type}}.md %} . Components and Properties . {% for component in page.components %} {% assign typehandler = site.data.TypeHandlers | where: “type”, component | first %} . {{typehandler.type}} . {% for property in typehandler.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} {% endfor %} . {% include tag_bottom/{{page.type}}.md %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Tags/submenutag/",
     "relUrl": "/Tags/submenutag/"
   }
-  ,"88": {
+  ,"94": {
     "title": "AsHostMacro",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {{page.description}} . Properties . {% for property in page.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Macros/ashostmacro/",
     "relUrl": "/Macros/ashostmacro/"
   }
-  ,"89": {
+  ,"95": {
     "title": "DefineMacro",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {{page.description}} . Properties . {% for property in page.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Macros/definemacro/",
     "relUrl": "/Macros/definemacro/"
   }
-  ,"90": {
+  ,"96": {
     "title": "ForEachMacro",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {{page.description}} . Properties . {% for property in page.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Macros/foreachmacro/",
     "relUrl": "/Macros/foreachmacro/"
   }
-  ,"91": {
+  ,"97": {
     "title": "IfMacro",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {{page.description}} . Properties . {% for property in page.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Macros/ifmacro/",
     "relUrl": "/Macros/ifmacro/"
   }
-  ,"92": {
+  ,"98": {
     "title": "ReparentMacro",
     "content": "{{page.type}} . {% for alias in page.aliases %} {{alias}} . {% endfor %} {{page.description}} . Properties . {% for property in page.properties %} {% for alias in property.aliases %} {{alias}} . {% endfor %} . {{property.type | escape}} | . {{property.description}} . {% endfor %} .",
     "url": "https://monkeymanboy.github.io/BSML-Docs/Macros/reparentmacro/",
